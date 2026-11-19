@@ -1,0 +1,21 @@
+{
+  "tematica": "Salud masculina",
+  "laminas": [
+    {
+      "archivo": "01-portada.png",
+      "plantilla": "Main.dc.html"
+    },
+    {
+      "archivo": "02-por-que.png",
+      "plantilla": "L02-por-que.dc.html"
+    },
+    {
+      "archivo": "03-primer-paso.png",
+      "plantilla": "L05-accion.dc.html"
+    },
+    {
+      "archivo": "04-cierre.png",
+      "plantilla": "L06-cierre.dc.html"
+    }
+  ]
+}
