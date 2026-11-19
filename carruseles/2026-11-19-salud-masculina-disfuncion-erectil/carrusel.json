@@ -11,23 +11,23 @@
       ]
     },
     {
-      "archivo": "02-por-que.png",
+      "archivo": "02-por-que-v2.png",
       "plantilla": "L02-por-que.dc.html",
       "reemplazos": [
         ["No es descuido. Es lo que te enseñaron.", "Si te cuesta hablarlo, tiene&nbsp;explicación."],
-        ["Te enseñaron que ser fuerte es aguantar.", "Te enseñaron que un hombre aguanta y no&nbsp;pregunta."],
+        ["Te enseñaron que ser fuerte es aguantar.", "Aprendiste que un hombre aguanta y no&nbsp;pregunta."],
         ["Que el proveedor no necesita que lo cuiden.", "Que es cosa de la edad y ya se va a&nbsp;pasar."],
         ["Por eso tantos hombres llegan tarde a la consulta.", "Por eso tantos hombres llegan tarde a la&nbsp;consulta."],
         ["Lo aprendido también se puede cambiar.", "Preguntar a tiempo también es ser&nbsp;fuerte."]
       ]
     },
     {
-      "archivo": "03-arterias.png",
+      "archivo": "03-arterias-v2.png",
       "plantilla": "L03-idea.dc.html",
       "reemplazos": [
         ["\">01</span>", "\">1–2&nbsp;mm</span>"],
-        ["Tu cuerpo avisa antes.", "Las arterias chicas avisan&nbsp;antes."],
-        ["El cansancio que no se va, el sueño que no repara, el deseo que baja. No son «cosas de la edad»: son señales.", "Las del pene miden 1&nbsp;a&nbsp;2&nbsp;mm; las del corazón, 3&nbsp;a&nbsp;4&nbsp;mm. Si la presión alta, el colesterol o el tabaco dañan los vasos, las chicas lo notan&nbsp;primero."],
+        ["Tu cuerpo avisa antes.", "Las arterias finas avisan&nbsp;antes."],
+        ["El cansancio que no se va, el sueño que no repara, el deseo que baja. No son «cosas de la edad»: son señales.", "Las del pene miden 1&nbsp;a&nbsp;2&nbsp;mm; las del corazón, 3&nbsp;a&nbsp;4&nbsp;mm. Si la presión alta, el colesterol o el tabaco dañan los vasos, las más finas lo notan&nbsp;primero."],
         [">Ejemplo<", ">En simple<"],
         ["Si llevas meses diciendo «ya se me va a pasar», esa frase también es una señal.", "Por eso la disfunción eréctil puede ser el primer aviso del&nbsp;corazón."]
       ]
