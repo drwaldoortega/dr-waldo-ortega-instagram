@@ -33,12 +33,12 @@
       ]
     },
     {
-      "archivo": "04-dato-67.png",
+      "archivo": "04-dato-67-v2.png",
       "plantilla": "L04-dato.dc.html",
       "reemplazos": [
         ["[CIFRA]", "67%"],
         ["[El dato en una frase simple, tomado de tu clase «El eslabón perdido».]", "En hombres con enfermedad coronaria y disfunción eréctil, la disfunción apareció&nbsp;primero."],
-        ["[Qué significa este dato para ti, en una línea.]", "En promedio, unos 3&nbsp;años de ventaja para&nbsp;cuidarte."],
+        ["[Qué significa este dato para ti, en una línea.]", "En promedio, unos 3&nbsp;años antes que los síntomas del&nbsp;corazón."],
         ["Fuente: [AUTOR, AÑO]", "Fuente: Montorsi&nbsp;y&nbsp;cols.,&nbsp;2003."]
       ]
     },
