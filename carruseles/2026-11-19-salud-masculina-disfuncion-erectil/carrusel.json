@@ -1,0 +1,81 @@
+{
+  "tematica": "Salud masculina",
+  "laminas": [
+    {
+      "archivo": "01-portada.png",
+      "plantilla": "Main.dc.html",
+      "reemplazos": [
+        ["Sostienes todo.", "Tu corazón puede avisar"],
+        ["¿Quién te sostiene <span style=\"color: #BA6A32\">a&nbsp;ti</span>?", "primero <span style=\"color: #BA6A32\">en&nbsp;la&nbsp;intimidad</span>."],
+        ["Lo que nadie te dijo sobre cuidarte.", "Disfunción eréctil: una señal para cuidar tu&nbsp;corazón."]
+      ]
+    },
+    {
+      "archivo": "02-por-que.png",
+      "plantilla": "L02-por-que.dc.html",
+      "reemplazos": [
+        ["No es descuido. Es lo que te enseñaron.", "Si te cuesta hablarlo, tiene&nbsp;explicación."],
+        ["Te enseñaron que ser fuerte es aguantar.", "Te enseñaron que un hombre aguanta y no&nbsp;pregunta."],
+        ["Que el proveedor no necesita que lo cuiden.", "Que es cosa de la edad y ya se va a&nbsp;pasar."],
+        ["Por eso tantos hombres llegan tarde a la consulta.", "Por eso tantos hombres llegan tarde a la&nbsp;consulta."],
+        ["Lo aprendido también se puede cambiar.", "Preguntar a tiempo también es ser&nbsp;fuerte."]
+      ]
+    },
+    {
+      "archivo": "03-arterias.png",
+      "plantilla": "L03-idea.dc.html",
+      "reemplazos": [
+        ["\">01</span>", "\">1–2&nbsp;mm</span>"],
+        ["Tu cuerpo avisa antes.", "Las arterias chicas avisan&nbsp;antes."],
+        ["El cansancio que no se va, el sueño que no repara, el deseo que baja. No son «cosas de la edad»: son señales.", "Las del pene miden 1&nbsp;a&nbsp;2&nbsp;mm; las del corazón, 3&nbsp;a&nbsp;4&nbsp;mm. Si la presión alta, el colesterol o el tabaco dañan los vasos, las chicas lo notan&nbsp;primero."],
+        [">Ejemplo<", ">En simple<"],
+        ["Si llevas meses diciendo «ya se me va a pasar», esa frase también es una señal.", "Por eso la disfunción eréctil puede ser el primer aviso del&nbsp;corazón."]
+      ]
+    },
+    {
+      "archivo": "04-dato-67.png",
+      "plantilla": "L04-dato.dc.html",
+      "reemplazos": [
+        ["[CIFRA]", "67%"],
+        ["[El dato en una frase simple, tomado de tu clase «El eslabón perdido».]", "En hombres con enfermedad coronaria y disfunción eréctil, la disfunción apareció&nbsp;primero."],
+        ["[Qué significa este dato para ti, en una línea.]", "En promedio, unos 3&nbsp;años de ventaja para&nbsp;cuidarte."],
+        ["Fuente: [AUTOR, AÑO]", "Fuente: Montorsi&nbsp;y&nbsp;cols.,&nbsp;2003."]
+      ]
+    },
+    {
+      "archivo": "05-buena-noticia.png",
+      "plantilla": "L04-dato.dc.html",
+      "reemplazos": [
+        [">Un dato<", ">La buena noticia<"],
+        ["[CIFRA]", "31%"],
+        ["[El dato en una frase simple, tomado de tu clase «El eslabón perdido».]", "de hombres de 35 a 55&nbsp;años con obesidad recuperó una función eréctil normal al bajar de peso y moverse&nbsp;más."],
+        ["[Qué significa este dato para ti, en una línea.]", "Lo lograron en dos años. Lo que cuida tu salud sexual cuida tu&nbsp;corazón."],
+        ["Fuente: [AUTOR, AÑO]", "Fuente: Esposito&nbsp;y&nbsp;cols.,&nbsp;2004."]
+      ]
+    },
+    {
+      "archivo": "06-tres-pasos.png",
+      "plantilla": "L05-accion.dc.html",
+      "reemplazos": [
+        ["Tu primer paso, hoy.", "Tres pasos, esta semana."],
+        ["Agenda tu chequeo preventivo.", "Si notas cambios, consulta."],
+        ["Una hora al año para ti.", "Pide que revisen tu corazón."],
+        ["Anota tus señales esta semana.", "Camina rápido hoy."],
+        ["Sueño, energía, ánimo y deseo.", "20 minutos ya cuentan."],
+        ["Cuéntaselo a alguien.", "Háblalo en casa."],
+        ["Tu pareja, un amigo o tu médico.", "Es salud, no rendimiento."],
+        ["¿Por dónde es más fácil para ti empezar?", "¿Por dónde es más fácil para ti&nbsp;empezar?"]
+      ]
+    },
+    {
+      "archivo": "07-cierre.png",
+      "plantilla": "L06-cierre.dc.html",
+      "props": {"accion": "Enviar"},
+      "reemplazos": [
+        ["Envíaselo al hombre que lo <span style=\"color: #BA6A32\">sostiene todo</span>.", "Envíaselo al amigo que cuida más su auto <span style=\"color: #BA6A32\">que su&nbsp;corazón</span>."],
+        ["Él también merece que alguien lo cuide.", "Escuchar esta señal a tiempo te regala&nbsp;años."],
+        ["Lidérate a ti. Cuida lo que heredas. Transforma lo que tocas.", "Lidérate a ti. Cuida lo que heredas. Transforma&nbsp;lo&nbsp;que&nbsp;tocas."]
+      ]
+    }
+  ]
+}
