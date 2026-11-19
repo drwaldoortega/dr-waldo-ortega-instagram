@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Lámina 05 · Primer paso</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1C2B45}a:hover{color:#26292D}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; padding: 80px; background: {{bg}}; color: #1C2B45; font-family: 'Barlow', Arial, sans-serif; display: flex; flex-direction: column; justify-content: space-between; gap: 40px">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 32px; height: 6px; background: {{detail}}"></span>
+      <span style="font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: #26292D">{{label}}</span>
+    </div>
+    <span style="font-size: 32px; font-weight: 600; color: #26292D">05 / 06</span>
+  </div>
+  <div style="background: {{cardBg}}; border-radius: 28px; padding: 64px 56px; display: flex; flex-direction: column; gap: 48px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-weight: 700; font-size: 84px; line-height: 1.05; color: #1C2B45">Tu primer paso, hoy.</h2>
+    <div style="display: flex; flex-direction: column; gap: 36px">
+      <div style="display: flex; align-items: flex-start; gap: 32px">
+        <span style="flex-shrink: 0; box-sizing: border-box; width: 76px; height: 76px; border-radius: 999px; border: 4px solid {{detail}}; color: #1C2B45; font-weight: 600; font-size: 40px; display: flex; align-items: center; justify-content: center">1</span>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p style="margin: 0; font-size: 44px; line-height: 1.2; font-weight: 600; color: #1C2B45">Agenda tu chequeo preventivo.</p>
+          <p style="margin: 0; font-size: 36px; line-height: 1.45; color: #26292D">Una hora al año para ti.</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 32px">
+        <span style="flex-shrink: 0; box-sizing: border-box; width: 76px; height: 76px; border-radius: 999px; border: 4px solid {{detail}}; color: #1C2B45; font-weight: 600; font-size: 40px; display: flex; align-items: center; justify-content: center">2</span>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p style="margin: 0; font-size: 44px; line-height: 1.2; font-weight: 600; color: #1C2B45">Anota tus señales esta semana.</p>
+          <p style="margin: 0; font-size: 36px; line-height: 1.45; color: #26292D">Sueño, energía, ánimo y deseo.</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 32px">
+        <span style="flex-shrink: 0; box-sizing: border-box; width: 76px; height: 76px; border-radius: 999px; border: 4px solid {{detail}}; color: #1C2B45; font-weight: 600; font-size: 40px; display: flex; align-items: center; justify-content: center">3</span>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <p style="margin: 0; font-size: 44px; line-height: 1.2; font-weight: 600; color: #1C2B45">Cuéntaselo a alguien.</p>
+          <p style="margin: 0; font-size: 36px; line-height: 1.45; color: #26292D">Tu pareja, un amigo o tu médico.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <div style="width: 64px; height: 4px; background: {{detail}}"></div>
+      <p style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-size: 56px; line-height: 1.1; font-weight: 700; color: #1C2B45">¿Por dónde es más fácil para ti empezar?</p>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; font-size: 36px; color: #26292D">
+    <span style="font-weight: 600; color: #1C2B45">Dr. Waldo Ortega</span>
+    <span>@dr_waldo_ortega</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tematica":{"editor":"enum","options":["Salud masculina","Estilo de vida","Liderazgo"],"default":"Salud masculina"},"fondo":{"editor":"enum","options":["Gris plata","Blanco cálido"],"default":"Gris plata"},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var T = { 'Salud masculina': '#BA6A32', 'Estilo de vida': '#5A6B3F', 'Liderazgo': '#7E6448' };
+    var tem = this.props.tematica ?? 'Salud masculina';
+    var blanco = (this.props.fondo ?? 'Gris plata') === 'Blanco cálido';
+    return {
+      label: tem,
+      detail: T[tem] || T['Salud masculina'],
+      bg: blanco ? '#F6F4EF' : '#E6E8EB',
+      cardBg: blanco ? 'transparent' : '#F6F4EF'
+    };
+  }
+}
+</script>
+</body>
+</html>

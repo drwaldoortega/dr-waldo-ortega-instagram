@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Lámina 06 · Cierre</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1C2B45}a:hover{color:#26292D}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; padding: 88px; background: {{bg}}; color: {{title}}; font-family: 'Barlow', Arial, sans-serif; display: flex; flex-direction: column; justify-content: space-between">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 32px; height: 6px; background: {{detail}}"></span>
+      <span style="font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: {{muted}}">{{label}}</span>
+    </div>
+    <span style="font-size: 32px; font-weight: 600; color: {{muted}}">06 / 06</span>
+  </div>
+  <sc-if value="{{enviar}}" hint-placeholder-val="{{ true }}">
+    <div style="display: flex; flex-direction: column; gap: 36px">
+      <svg width="88" height="88" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 3 L10 14" style="fill: none; stroke: {{detail}}; stroke-width: 1.6px; stroke-linecap: round; stroke-linejoin: round"></path>
+        <path d="M21 3 L14.5 21 L10 14 L3 9.5 Z" style="fill: none; stroke: {{detail}}; stroke-width: 1.6px; stroke-linecap: round; stroke-linejoin: round"></path>
+      </svg>
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-weight: 700; font-size: 96px; line-height: 1.05; color: {{head}}">Envíaselo al hombre que lo <span style="color: {{hl}}">sostiene todo</span>.</h2>
+      <p style="margin: 0; font-size: 44px; line-height: 1.45; color: {{muted}}">Él también merece que alguien lo cuide.</p>
+    </div>
+  </sc-if>
+  <sc-if value="{{guardar}}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-direction: column; gap: 36px">
+      <svg width="88" height="88" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 3 H18 V21 L12 16.5 L6 21 Z" style="fill: none; stroke: {{detail}}; stroke-width: 1.6px; stroke-linecap: round; stroke-linejoin: round"></path>
+      </svg>
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-weight: 700; font-size: 96px; line-height: 1.05; color: {{head}}">Guárdalo para tu próxima <span style="color: {{hl}}">semana pesada</span>.</h2>
+      <p style="margin: 0; font-size: 44px; line-height: 1.45; color: {{muted}}">Y vuelve a él cuando lo necesites.</p>
+    </div>
+  </sc-if>
+  <div style="display: flex; flex-direction: column; gap: 24px">
+    <div style="height: 2px; background: {{detail}}"></div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 40px; font-weight: 600; color: {{title}}">Dr. Waldo Ortega</span>
+      <span style="font-size: 36px; line-height: 1.45; color: {{muted}}">Médico familiar · Estilos de vida y salud masculina</span>
+      <span style="font-size: 36px; line-height: 1.45; color: {{muted}}">@dr_waldo_ortega</span>
+    </div>
+    <p style="margin: 0; font-size: 36px; line-height: 1.45; color: {{muted}}">Lidérate a ti. Cuida lo que heredas. Transforma lo que tocas.</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tematica":{"editor":"enum","options":["Salud masculina","Estilo de vida","Liderazgo"],"default":"Salud masculina"},"fondo":{"editor":"enum","options":["Gris plata","Blanco cálido","Azul marino"],"default":"Gris plata"},"accion":{"editor":"enum","options":["Enviar","Guardar"],"default":"Enviar"},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var T = {
+      'Salud masculina': { c: '#BA6A32', k: 'naranja' },
+      'Estilo de vida': { c: '#5A6B3F', k: 'oliva' },
+      'Liderazgo': { c: '#7E6448', k: 'tierra' }
+    };
+    var tem = this.props.tematica ?? 'Salud masculina';
+    var t = T[tem] || T['Salud masculina'];
+    var f = this.props.fondo ?? 'Gris plata';
+    if (t.k === 'oliva' && f === 'Azul marino') f = 'Gris plata';
+    if (t.k === 'tierra') f = 'Azul marino';
+    var azul = f === 'Azul marino';
+    var blanco = f === 'Blanco cálido';
+    var lidAzul = azul && t.k === 'tierra';
+    var accion = this.props.accion ?? 'Enviar';
+    return {
+      label: tem,
+      detail: lidAzul ? '#8A949C' : t.c,
+      bg: azul ? '#1C2B45' : (blanco ? '#F6F4EF' : '#E6E8EB'),
+      title: azul ? '#F6F4EF' : '#1C2B45',
+      head: lidAzul ? '#8A949C' : (azul ? '#F6F4EF' : '#1C2B45'),
+      muted: azul ? '#E6E8EB' : '#26292D',
+      hl: (azul && t.k !== 'naranja') ? '#F6F4EF' : t.c,
+      enviar: accion === 'Enviar',
+      guardar: accion === 'Guardar'
+    };
+  }
+}
+</script>
+</body>
+</html>

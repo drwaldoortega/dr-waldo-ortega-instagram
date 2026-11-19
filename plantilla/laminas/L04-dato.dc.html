@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Lámina 04 · Dato con fuente</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1C2B45}a:hover{color:#26292D}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; padding: 80px; background: {{bg}}; color: {{title}}; font-family: 'Barlow', Arial, sans-serif; display: flex; flex-direction: column; justify-content: space-between; gap: 40px">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 32px; height: 6px; background: {{detail}}"></span>
+      <span style="font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: {{muted}}">{{label}}</span>
+    </div>
+    <span style="font-size: 32px; font-weight: 600; color: {{muted}}">04 / 06</span>
+  </div>
+  <div style="background: {{cardBg}}; border-radius: 28px; padding: 64px 56px; display: flex; flex-direction: column; gap: 36px">
+    <span style="font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: {{muted}}">Un dato</span>
+    <span style="font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-weight: 700; font-size: 200px; line-height: 0.9; color: {{hl}}">[CIFRA]</span>
+    <p style="margin: 0; font-size: 44px; line-height: 1.45; color: {{text}}">[El dato en una frase simple, tomado de tu clase «El eslabón perdido».]</p>
+    <div style="width: 64px; height: 4px; background: {{detail}}"></div>
+    <p style="margin: 0; font-size: 40px; line-height: 1.45; color: {{text}}">[Qué significa este dato para ti, en una línea.]</p>
+    <p style="margin: 0; font-size: 36px; line-height: 1.45; color: {{muted}}">Fuente: [AUTOR, AÑO]</p>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; font-size: 36px; color: {{muted}}">
+    <span style="font-weight: 600; color: {{title}}">Dr. Waldo Ortega</span>
+    <span>@dr_waldo_ortega</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tematica":{"editor":"enum","options":["Salud masculina","Estilo de vida","Liderazgo"],"default":"Salud masculina"},"fondo":{"editor":"enum","options":["Gris plata","Blanco cálido","Azul marino"],"default":"Gris plata"},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var T = {
+      'Salud masculina': { c: '#BA6A32', k: 'naranja' },
+      'Estilo de vida': { c: '#5A6B3F', k: 'oliva' },
+      'Liderazgo': { c: '#7E6448', k: 'tierra' }
+    };
+    var tem = this.props.tematica ?? 'Salud masculina';
+    var t = T[tem] || T['Salud masculina'];
+    var f = this.props.fondo ?? 'Gris plata';
+    if (t.k === 'oliva' && f === 'Azul marino') f = 'Gris plata';
+    var azul = f === 'Azul marino';
+    var blanco = f === 'Blanco cálido';
+    var lidAzul = azul && t.k === 'tierra';
+    return {
+      label: tem,
+      detail: lidAzul ? '#8A949C' : t.c,
+      bg: azul ? '#1C2B45' : (blanco ? '#F6F4EF' : '#E6E8EB'),
+      title: azul ? '#F6F4EF' : '#1C2B45',
+      text: azul ? '#F6F4EF' : '#26292D',
+      muted: azul ? '#E6E8EB' : '#26292D',
+      cardBg: (azul || blanco) ? 'transparent' : '#F6F4EF',
+      hl: (azul && t.k !== 'naranja') ? '#F6F4EF' : t.c
+    };
+  }
+}
+</script>
+</body>
+</html>

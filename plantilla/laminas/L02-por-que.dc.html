@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Lámina 02 · Por qué</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1C2B45}a:hover{color:#26292D}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; padding: 80px; background: {{bg}}; color: #1C2B45; font-family: 'Barlow', Arial, sans-serif; display: flex; flex-direction: column; justify-content: space-between; gap: 40px">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 32px; height: 6px; background: {{detail}}"></span>
+      <span style="font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: #26292D">{{label}}</span>
+    </div>
+    <span style="font-size: 32px; font-weight: 600; color: #26292D">02 / 06</span>
+  </div>
+  <div style="background: {{cardBg}}; border-radius: 28px; padding: 56px; display: flex; flex-direction: column; gap: 40px">
+    <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-weight: 700; font-size: 84px; line-height: 1.05; color: #1C2B45">No es descuido. Es lo que te enseñaron.</h2>
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <p style="margin: 0; font-size: 40px; line-height: 1.45; color: #26292D">Te enseñaron que ser fuerte es aguantar.</p>
+      <p style="margin: 0; font-size: 40px; line-height: 1.45; color: #26292D">Que el proveedor no necesita que lo cuiden.</p>
+      <p style="margin: 0; font-size: 40px; line-height: 1.45; color: #26292D">Por eso tantos hombres llegan tarde a la consulta.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <div style="width: 64px; height: 4px; background: {{detail}}"></div>
+      <p style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-size: 56px; line-height: 1.1; font-weight: 700; color: #1C2B45">Lo aprendido también se puede cambiar.</p>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; font-size: 36px; color: #26292D">
+    <span style="font-weight: 600; color: #1C2B45">Dr. Waldo Ortega</span>
+    <span>@dr_waldo_ortega</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tematica":{"editor":"enum","options":["Salud masculina","Estilo de vida","Liderazgo"],"default":"Salud masculina"},"fondo":{"editor":"enum","options":["Gris plata","Blanco cálido"],"default":"Gris plata"},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var T = { 'Salud masculina': '#BA6A32', 'Estilo de vida': '#5A6B3F', 'Liderazgo': '#7E6448' };
+    var tem = this.props.tematica ?? 'Salud masculina';
+    var blanco = (this.props.fondo ?? 'Gris plata') === 'Blanco cálido';
+    return {
+      label: tem,
+      detail: T[tem] || T['Salud masculina'],
+      bg: blanco ? '#F6F4EF' : '#E6E8EB',
+      cardBg: blanco ? 'transparent' : '#F6F4EF'
+    };
+  }
+}
+</script>
+</body>
+</html>

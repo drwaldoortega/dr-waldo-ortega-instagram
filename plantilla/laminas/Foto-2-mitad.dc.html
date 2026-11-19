@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Foto 2 · Mitad foto, mitad texto</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1C2B45}a:hover{color:#26292D}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; padding: 80px; background: #E6E8EB; color: #1C2B45; font-family: 'Barlow', Arial, sans-serif; display: flex; flex-direction: column; justify-content: space-between; gap: 36px">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 32px; height: 6px; background: {{detail}}"></span>
+      <span style="font-size: 32px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; color: #26292D">{{label}}</span>
+    </div>
+    <span style="font-size: 32px; font-weight: 600; color: #26292D">02 / 06</span>
+  </div>
+  <div style="background: #F6F4EF; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column">
+    <div style="height: 480px; background: {{photoBg}}; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: {{photoInk}}">
+      <svg width="72" height="72" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 8h3l2-3h6l2 3h3v11H4z" style="fill: none; stroke: {{photoInk}}; stroke-width: 1.4px; stroke-linejoin: round"></path>
+        <circle cx="12" cy="13" r="3.5" style="fill: none; stroke: {{photoInk}}; stroke-width: 1.4px"></circle>
+      </svg>
+      <span style="font-size: 32px; font-weight: 600; letter-spacing: 0.12em">FOTO</span>
+      <span style="font-size: 34px; line-height: 1.4; text-align: center; max-width: 700px">{{photoDesc}}</span>
+    </div>
+    <div style="padding: 48px 56px 56px; display: flex; flex-direction: column; gap: 24px">
+      <div style="width: 64px; height: 4px; background: {{detail}}"></div>
+      <h2 style="margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; font-weight: 700; font-size: 80px; line-height: 1.05; color: #1C2B45">{{titulo}}</h2>
+      <p style="margin: 0; font-size: 40px; line-height: 1.45; color: #26292D">{{texto}}</p>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; font-size: 36px; color: #26292D">
+    <span style="font-weight: 600; color: #1C2B45">Dr. Waldo Ortega</span>
+    <span>@dr_waldo_ortega</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tematica":{"editor":"enum","options":["Salud masculina","Estilo de vida","Liderazgo"],"default":"Salud masculina"},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var D = {
+      'Salud masculina': {
+        photoBg: 'linear-gradient(160deg, #F6F4EF 0%, #7E6448 100%)', photoInk: '#26292D',
+        photoDesc: 'Chequeo preventivo: tú tomándote la presión · medio cuerpo',
+        detail: '#BA6A32',
+        titulo: 'Una hora al año para ti.',
+        texto: 'El chequeo preventivo no es para cuando algo duele. Es para que no llegue a doler.'
+      },
+      'Estilo de vida': {
+        photoBg: 'linear-gradient(160deg, #F6F4EF 0%, #5A6B3F 100%)', photoInk: '#26292D',
+        photoDesc: 'Comida real preparándose · luz de ventana',
+        detail: '#5A6B3F',
+        titulo: 'Cocinar también es cuidarte.',
+        texto: 'No necesitas una dieta perfecta. Necesitas más comida que reconozcas y menos que venga en paquete.'
+      },
+      'Liderazgo': {
+        photoBg: 'linear-gradient(160deg, #8A949C 0%, #1C2B45 100%)', photoInk: '#F6F4EF',
+        photoDesc: 'Trabajo en equipo frente a una pizarra · medio',
+        detail: '#7E6448',
+        titulo: 'Tu calma se contagia.',
+        texto: 'Lo que llevas por dentro a una reunión le llega a tu equipo antes que cualquier instrucción.'
+      }
+    };
+    var tem = this.props.tematica ?? 'Salud masculina';
+    var d = D[tem] || D['Salud masculina'];
+    return Object.assign({ label: tem }, d);
+  }
+}
+</script>
+</body>
+</html>
